@@ -17,4 +17,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(AppActions.loadTodos())
   }
+
+  onClick(id) {
+    this.store.dispatch(AppActions.deleteTodos({id:1}))
+  }
 }

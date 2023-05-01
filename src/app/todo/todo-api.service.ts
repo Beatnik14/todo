@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Todo } from './todo.model';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class TodoApiService {
+  apiUrl = 'http://localhost:3000/todos/';
 
-    apiUrl = 'http://localhost:3000/todos'
+  constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) { }
+  getTodos(): Observable<Todo[]> {
+    return this.http.get<Todo[]>(this.apiUrl);
+  }
 
-    getTodos(): Observable<Todo[]> {
-        return this.http.get<Todo[]>(this.apiUrl)
-    }
+  deleteTodos(id: number): Observable<number> {
+    return this.http.delete<number>(`${this.apiUrl}/${id}`).pipe(map(() => id));
+  }
 }
