@@ -30,13 +30,13 @@ export class AppEffects {
 
   deleteTodos$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(AppActions.deleteTodos),
+      ofType(AppActions.deleteTodo),
       mergeMap(({ id }) =>
         this.apiService.deleteTodos(id).pipe(
-          map((id) => AppActions.deleteTodosSuccess({ id })),
+          map((id) => AppActions.deleteTodoSuccess({ id })),
           catchError((err: HttpErrorResponse) =>
             of(
-              AppActions.deleteTodosFailure({
+              AppActions.updateTodoFailure({
                 error: `Failed to get providers. Server responded with: ${err.message}`,
               })
             )

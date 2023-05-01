@@ -12,11 +12,11 @@ export const deleteTodoSuccess = createAction('[TODO] Delete Todos  Success', pr
 export const deleteTodoFailure = createAction('[TODO] Delete Todos Failure', props<{error: string}>());
 
 //Update Todo
-export const updateTodo = createAction('[TODO] Delete Todos',   props<{ id: number }>());
-export const updateTodoSuccess = createAction('[TODO] Delete Todos  Success', props<{id: number}>());
-export const updateTodoFailure = createAction('[TODO] Delete Todos Failure', props<{error: string}>());
+export const updateTodo = createAction('[TODO] Update Todos',   props<{ id: number }>());
+export const updateTodoSuccess = createAction('[TODO] Update Todos  Success', props<{id: number}>());
+export const updateTodoFailure = createAction('[TODO] Update Todos Failure', props<{error: string}>());
 
 //Add Todo
-export const addTodo = createAction('[TODO] Delete Todos',   props<{ id: number }>());
-export const addTodoSuccess = createAction('[TODO] Delete Todos  Success', props<{id: number}>());
-export const addTodoFailure = createAction('[TODO] Delete Todos Failure', props<{error: string}>());
+export const addTodo = createAction('[TODO] Add Todos',   props<{ id: number }>());
+export const addTodoSuccess = createAction('[TODO] Add Todos  Success', props<{id: number}>());
+export const addTodoFailure = createAction('[TODO] Add Todos Failure', props<{error: string}>());

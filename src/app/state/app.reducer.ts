@@ -31,13 +31,13 @@ export const appReducer = createReducer(
   }),
 
   //Load Todos
-  on(TodoActions.deleteTodos, (state: AppState) => {
+  on(TodoActions.deleteTodo, (state: AppState) => {
     return {
       ...state,
       loading: true,
     };
   }),
-  on(TodoActions.deleteTodosSuccess, (state: AppState, data) => {
+  on(TodoActions.deleteTodoSuccess, (state: AppState, data) => {
     console.log('loadTodosSuccess');
     return {
       ...state,
@@ -45,7 +45,7 @@ export const appReducer = createReducer(
       todos: TodoUtils.removeItem(state.todos, data.id),
     };
   }),
-  on(TodoActions.deleteTodosFailure, (state: AppState, data) => {
+  on(TodoActions.deleteTodoFailure, (state: AppState, data) => {
     return {
       ...state,
       loading: false,

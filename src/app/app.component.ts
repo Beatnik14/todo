@@ -19,6 +19,6 @@ export class AppComponent implements OnInit {
   }
 
   onClick(id) {
-    this.store.dispatch(AppActions.deleteTodos({id:1}))
+    this.store.dispatch(AppActions.deleteTodo({id:1}))
   }
 }
