@@ -14,13 +14,15 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { appReducer } from './state/app.reducer';
 import { AppEffects } from './state/app.effects';
+import { TodoComponent } from './todo/todo/todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoLandingComponent,
     TodoListComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
