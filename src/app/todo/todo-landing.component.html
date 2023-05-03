@@ -1,4 +1,11 @@
-<div class="row w-1/2 mx-auto">
+<div class="row mx-auto wrapper">
+    <div class="add-todo">
+        <ng-template #addTodo>
+            <app-add-todo></app-add-todo>
+        </ng-template>
+        <button (click)="onToggle()" *ngIf="addTodo$ | async; else addTodo">+</button>
+    </div>
     <app-todo-list></app-todo-list>
-
+    <app-error-alert *ngIf="error$ | async as error" [error]="error"></app-error-alert>
+    <app-todo-filter></app-todo-filter>
 </div>

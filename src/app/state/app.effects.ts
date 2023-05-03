@@ -8,7 +8,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable()
 export class AppEffects {
-  constructor(private actions$: Actions, private apiService: TodoApiService) {}
+  constructor(private actions$: Actions, private apiService: TodoApiService) { }
 
   loadTodos$ = createEffect(() => {
     return this.actions$.pipe(
@@ -19,7 +19,7 @@ export class AppEffects {
           catchError((err: HttpErrorResponse) =>
             of(
               AppActions.loadTodosFailure({
-                error: `Failed to get providers. Server responded with: ${err.message}`,
+                error: `Failed to get todo. Server responded with: ${err.message}`,
               })
             )
           )
@@ -28,7 +28,7 @@ export class AppEffects {
     );
   });
 
-  deleteTodos$ = createEffect(() => {
+  deleteTodo$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(AppActions.deleteTodo),
       mergeMap(({ id }) =>
@@ -37,7 +37,43 @@ export class AppEffects {
           catchError((err: HttpErrorResponse) =>
             of(
               AppActions.updateTodoFailure({
-                error: `Failed to get providers. Server responded with: ${err.message}`,
+                error: `Failed to delete todo. Server responded with: ${err.message}`,
+              })
+            )
+          )
+        )
+      )
+    );
+  });
+
+  addTodo$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AppActions.addTodo),
+      mergeMap(({ todo }) =>
+        this.apiService.addTodo(todo).pipe(
+          map((todo) => AppActions.addTodoSuccess({ todo })),
+          catchError((err: HttpErrorResponse) =>
+            of(
+              AppActions.updateTodoFailure({
+                error: `Failed to add todo. Server responded with: ${err.message}`,
+              })
+            )
+          )
+        )
+      )
+    );
+  });
+
+  updatedTodos$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(AppActions.updateTodo),
+      mergeMap(({ todo }) =>
+        this.apiService.updateTodo(todo).pipe(
+          map((todo) => AppActions.updateTodoSuccess({ todo })),
+          catchError((err: HttpErrorResponse) =>
+            of(
+              AppActions.updateTodoFailure({
+                error: `Failed to update todo. Server responded with: ${err.message}`,
               })
             )
           )

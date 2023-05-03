@@ -1,0 +1,15 @@
+<div class="card bg-white flex  item-center justify-between items-center rounded">
+   <div class="items-left gap" *ngIf="activeTodos$ | async as activeTodos">
+      <p>{{activeTodos.length}} Active Tasks</p>
+   </div>
+   <div class="filters gap" *ngIf="activeFilter$ | async as activeFilter">
+      <button class="gap btn" [ngClass]="{active: activeFilter=='All'} " (click)="onFilter('All')">All</button>
+      <button class="gap btn" [ngClass]="{active: activeFilter=='ACTIVE'} " (click)="onFilter('ACTIVE')">Active</button>
+      <button class="gap btn" [ngClass]="{active: activeFilter=='COMPLETED'} "
+         (click)="onFilter('COMPLETED')">Completed</button>
+   </div>
+   <div>
+      <button (click)="clearCompleted()">Clear Completed</button>
+   </div>
+</div>
+<hr>

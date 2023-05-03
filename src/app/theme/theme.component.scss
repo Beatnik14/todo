@@ -1,0 +1,33 @@
+.row {
+    min-width: 10%;
+    max-width: 5rem;
+
+    .select {
+        text-align: center;
+        background-color: var(--color-secondary);
+        color: var(--txt-primary);
+        cursor: pointer;
+        padding: 0.8rem 0;
+        border: none;
+
+        &:focus-visible {
+            outline: none !important;
+        }
+
+        option {
+            text-align: center;
+            background-color: var(--color-secondary);
+
+            &:checked {
+                background-color: var(--color-primary) !important;
+                color: white;
+            }
+
+            &:focus-visible {
+                outline: none !important;
+            }
+
+
+        }
+    }
+}

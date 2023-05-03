@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import * as AppActions from './state/app.actions'
+import * as AppSelectors from './state/app.selectors'
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import * as AppActions from './state/app.actions'
 })
 export class AppComponent implements OnInit {
   title = 'todo';
+  loading$ = this.store.select(AppSelectors.getLoading);
 
   constructor(private store: Store) {
   }
@@ -18,7 +20,6 @@ export class AppComponent implements OnInit {
     this.store.dispatch(AppActions.loadTodos())
   }
 
-  onClick(id) {
-    this.store.dispatch(AppActions.deleteTodo({id:1}))
-  }
+ 
+
 }

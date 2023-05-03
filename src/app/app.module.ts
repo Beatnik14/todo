@@ -15,6 +15,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { appReducer } from './state/app.reducer';
 import { AppEffects } from './state/app.effects';
 import { TodoComponent } from './todo/todo/todo.component';
+import { FormsModule } from '@angular/forms';
+import { ErrorAlertComponent } from './shared/error-alert/error-alert.component';
+import { TodoFilterComponent } from './todo/todo-filter/todo-filter.component';
+import { ThemeComponent } from './theme/theme.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +26,17 @@ import { TodoComponent } from './todo/todo/todo.component';
     TodoLandingComponent,
     TodoListComponent,
     AddTodoComponent,
-    TodoComponent
+    TodoComponent,
+    ErrorAlertComponent,
+    TodoFilterComponent,
+    ThemeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    FormsModule,
     StoreModule.forRoot({app: appReducer}),
     EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })

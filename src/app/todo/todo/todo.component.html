@@ -1,18 +1,19 @@
-<div class="card bg-white flex gap-x-4 item-center" *ngIf="todo">
-    <div class="checkbox">
-        <div class="checkbox-wrapper-15">
-            <input class="inp-cbx" id="cbx-15" type="checkbox" style="display: none;" />
-            <label class="cbx" for="cbx-15">
-                <span>
-                    <svg width="12px" height="9px" viewbox="0 0 12 9">
-                        <polyline points="1 5 4 8 11 1"></polyline>
-                    </svg>
-                </span>
-                <span>To-do</span>
-            </label>
-        </div>
+<div class="card bg-white flex  item-center justify-between rounded" *ngIf="todo">
+    <div class="checkbox-wrapper-33 flex items-center">
+        <label class="checkbox">
+            <input class="checkbox__trigger visuallyhidden" type="checkbox" [checked]="todo.completed"
+                (change)="onCheck()" />
+            <span class="checkbox__symbol">
+                <svg aria-hidden="true" class="icon-checkbox" width="28px" height="28px" viewBox="0 0 28 28" version="1"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 14l8 7L24 7"></path>
+                </svg>
+            </span>
+            <p class="checkbox__textwrapper"> {{todo.description | titlecase}}</p>
+        </label>
     </div>
-    <div class="card-content">
-        {{todo.content}}
+    <div class="flex items-center delete cursor-pointer flex items-center">
+        <p (click)="onDelete()" class="m-0">x</p>
     </div>
 </div>
+<hr>

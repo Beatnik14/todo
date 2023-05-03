@@ -2,5 +2,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: rgba(23,23,34,255);}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: var(--bg-primary);
+}
+
+:root {
+    --color-primary: #d611e8;
+    --color-secondary: #24273D;
+    --bg-primary: #171722;
+    --txt-primary: #9b9fc7;
+}
+
+[data-theme="blue"] {
+    --color-primary: #11dae8;
+}
+
+[data-theme="green"] {
+    --color-primary: #11e88e;
+}
+
+[data-theme="red"] {
+    --color-primary: #e83111;
+}

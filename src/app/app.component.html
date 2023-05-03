@@ -1,5 +1,14 @@
-<div class="container">
-    <app-todo-landing></app-todo-landing>
+<div class="wrapper flex flex-col justify-center">
+    <div class="theme">
+        <app-theme></app-theme>
+    </div>
+    <ng-template #content>
+        <app-todo-landing></app-todo-landing>
+    </ng-template>
+    <div class="lds-ring" *ngIf="loading$ | async; else content">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </div>
-
-<button (click)="onClick(0)">asd</button>

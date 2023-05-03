@@ -1,3 +1,20 @@
-<div class="row w-1/2 mx-auto mt-5" *ngIf="todos$ | async as todos">
-    <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+<div class="row mx-auto mt-5" [ngSwitch]="filter$ | async">
+    <div *ngSwitchCase="'All'">
+
+        <div *ngIf="todos$ | async as todos">
+            <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+        </div>
+    </div>
+    <div *ngSwitchCase="'COMPLETED'">
+
+        <div *ngIf="completed$ | async as todos">
+            <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+        </div>
+    </div>
+    <div *ngSwitchCase="'ACTIVE'">
+
+        <div *ngIf="activeTodo$ | async as todos">
+            <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+        </div>
+    </div>
 </div>

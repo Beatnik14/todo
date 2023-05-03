@@ -13,6 +13,10 @@ import { AppState } from 'src/app/state/app.state';
 export class TodoListComponent implements OnInit{
 
   todos$ = this.store.select(AppSelectors.getTodos)
+  activeTodo$ = this.store.select(AppSelectors.getActiveTodos)
+  completed$ = this.store.select(AppSelectors.getCompletedTodos)
+
+  filter$ = this.store.select(AppSelectors.getFilter)
 
   constructor(private store: Store<AppState>){
   }
