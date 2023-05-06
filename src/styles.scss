@@ -15,7 +15,8 @@ body {
 }
 
 :root {
-    --color-primary: #d611e8;
+    --color-primary: #e411e8;
+    --color-primary: #11dae8;
     --color-secondary: #24273D;
     --bg-primary: #171722;
     --txt-primary: #9b9fc7;
@@ -29,6 +30,15 @@ body {
     --color-primary: #11e88e;
 }
 
-[data-theme="red"] {
-    --color-primary: #e83111;
+[data-theme="pink"] {
+    --color-primary: #e411e8;
 }
+
+[data-theme="purple"] {
+    --color-primary: #a011e8;
+}
+
+
+// [data-theme="red"] {
+//   --color-primary: #e83111;
+// }

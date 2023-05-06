@@ -1,32 +1,3 @@
 {
-  "todos": [
-    {
-      "content": "aksdhkajshd",
-      "id": 7,
-      "description": "akhsdkjas",
-      "completed": "true"
-    },
-    {
-      "content": "aksdhkajshd",
-      "id": 8,
-      "description": "akhsdkjas",
-      "completed": "false"
-    },
-    {
-      "content": "aksdhkajshd",
-      "id": 9,
-      "description": "akhsdkjas",
-      "completed": "true"
-    },
-    {
-      "description": "sdf",
-      "completed": false,
-      "id": 10
-    },
-    {
-      "description": "sdf",
-      "completed": true,
-      "id": 11
-    }
-  ]
+  "todos": []
 }

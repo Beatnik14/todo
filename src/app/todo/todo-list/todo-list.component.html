@@ -1,20 +1,35 @@
 <div class="row mx-auto mt-5" [ngSwitch]="filter$ | async">
-    <div *ngSwitchCase="'All'">
-
-        <div *ngIf="todos$ | async as todos">
-            <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+  <div *ngSwitchCase="'All'">
+    <div *ngIf="todos$ | async as todos">
+      <div *ngIf="todos.length < 1">
+        <div class="card flex item-center justify-between rounded">
+          <p>You have no active or completed todo.</p>
         </div>
+        <hr />
+      </div>
+      <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
     </div>
-    <div *ngSwitchCase="'COMPLETED'">
-
-        <div *ngIf="completed$ | async as todos">
-            <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+  </div>
+  <div *ngSwitchCase="'COMPLETED'">
+    <div *ngIf="completed$ | async as todos">
+      <div *ngIf="todos.length < 1">
+        <div class="card flex item-center justify-between rounded">
+          <p>You have 0 completed todos.</p>
         </div>
+        <hr />
+      </div>
+      <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
     </div>
-    <div *ngSwitchCase="'ACTIVE'">
-
-        <div *ngIf="activeTodo$ | async as todos">
-            <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+  </div>
+  <div *ngSwitchCase="'ACTIVE'">
+    <div *ngIf="activeTodo$ | async as todos">
+      <div *ngIf="todos.length < 1">
+        <div class="card flex item-center justify-between rounded">
+          <p>You have 0 active todos.</p>
         </div>
+        <hr />
+      </div>
+      <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
     </div>
+  </div>
 </div>

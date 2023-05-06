@@ -1,8 +1,12 @@
 <div class="row mt-4">
-    <select class="select appearance-none  rounded  block w-full" (change)="onFilter()" [(ngModel)]="select">
-        <option selected value="pink">Pink</option>
-        <option value="blue">Blue</option>
-        <option value="green">Green</option>
-        <option value="red">Red</option>
-    </select>
+  <select
+    class="select appearance-none rounded block w-full"
+    (change)="onFilter()"
+    [(ngModel)]="select"
+  >
+    <option value="blue" selected>Blue</option>
+    <option value="pink">Pink</option>
+    <option value="green">Green</option>
+    <option value="purple">Purple</option>
+  </select>
 </div>

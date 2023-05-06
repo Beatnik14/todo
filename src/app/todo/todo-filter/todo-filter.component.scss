@@ -1,36 +1,45 @@
 .card {
-    background-color: var(--color-secondary);
-    color: var(--txt-primary);
-    padding: 1.5rem 2rem;
-    text-align: center;
-    width: 100%;
-    max-height: 5rem;
-    min-height: 4rem;
+  background-color: var(--color-secondary);
+  color: var(--txt-primary);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  width: 100%;
+  max-height: 5rem;
+  min-height: 4rem;
 
-    p {
-        margin: 0;
+  .filters {
+    button {
+      &:hover {
+        transform: scale(1.1);
+        transition: width 0.2s;
+      }
     }
+  }
 
-    .active {
-        color: var(--color-primary);
-    }
+  p {
+    margin: 0;
+  }
 
-    button:hover {
-        color: var(--color-primary);
-    }
+  .active {
+    color: var(--color-primary);
+  }
 
-    .gap {
-        margin-right: 1rem;
-        @media (max-width: 768px) {
-            margin-right: 0.4rem;
-        }
-    }
+  button:hover {
+    color: var(--color-primary);
+  }
 
+  .gap {
+    margin-right: 1rem;
     @media (max-width: 768px) {
-        padding: 0.5rem 1rem;
+      margin-right: 0.4rem;
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem 1rem;
+  }
 }
 
 hr {
-    border-color: var(--color-primary);
+  border-color: var(--color-primary);
 }

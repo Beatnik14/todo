@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import * as AppActions from './app.actions';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { TodoApiService } from '../todo/todo-api.service';
-import { catchError, map, switchMap, of, mergeMap } from 'rxjs';
+import { catchError, map, switchMap, of, mergeMap, concatMap } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable()
@@ -31,7 +31,7 @@ export class AppEffects {
   deleteTodo$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(AppActions.deleteTodo),
-      mergeMap(({ id }) =>
+      concatMap(({ id }) =>
         this.apiService.deleteTodos(id).pipe(
           map((id) => AppActions.deleteTodoSuccess({ id })),
           catchError((err: HttpErrorResponse) =>

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./theme.component.scss']
 })
 export class ThemeComponent {
-  select: string = 'pink';
+  select: string = 'blue';
 
   onFilter() {
     document.documentElement.setAttribute('data-theme', this.select)

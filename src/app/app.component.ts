@@ -20,6 +20,6 @@ export class AppComponent implements OnInit {
     this.store.dispatch(AppActions.loadTodos())
   }
 
- 
+
 
 }

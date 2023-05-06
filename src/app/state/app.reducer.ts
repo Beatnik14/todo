@@ -44,8 +44,8 @@ export const appReducer = createReducer(
       ...state,
       loading: false,
       todos: TodoUtils.removeItem(state.todos, id),
-      activeTodos: state.todos.filter((t) => t.completed),
-      completedTodos: state.todos.filter((t) => !t.completed),
+      activeTodos: TodoUtils.removeItem(state.todos, id).filter((t) => !t.completed),
+      completedTodos: TodoUtils.removeItem(state.todos, id).filter((t) => t.completed),
     };
   }),
 
