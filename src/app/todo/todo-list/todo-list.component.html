@@ -3,7 +3,7 @@
     <div *ngIf="todos$ | async as todos">
       <div *ngIf="todos.length < 1">
         <div class="card flex item-center justify-between rounded">
-          <p>You have no active or completed todo.</p>
+          <p>You have no active or completed tasks.</p>
         </div>
         <hr />
       </div>
@@ -14,7 +14,7 @@
     <div *ngIf="completed$ | async as todos">
       <div *ngIf="todos.length < 1">
         <div class="card flex item-center justify-between rounded">
-          <p>You have 0 completed todos.</p>
+          <p>You have 0 completed tasks.</p>
         </div>
         <hr />
       </div>
@@ -25,7 +25,7 @@
     <div *ngIf="activeTodo$ | async as todos">
       <div *ngIf="todos.length < 1">
         <div class="card flex item-center justify-between rounded">
-          <p>You have 0 active todos.</p>
+          <p>You have 0 active tasks.</p>
         </div>
         <hr />
       </div>
