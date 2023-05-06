@@ -10,6 +10,5 @@ export class ThemeComponent {
 
   onFilter() {
     document.documentElement.setAttribute('data-theme', this.select)
-    console.log(this.select)
   }
 }
